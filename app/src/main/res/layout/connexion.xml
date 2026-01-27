@@ -1,25 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical"
-android:padding="24dp">
-
-<EditText
-    android:id="@+id/email"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="@string/email"
-    android:inputType="textEmailAddress"/>
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/app"
+    android:padding="24dp">
 
-<EditText
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_arrow_back_24"
+       app:tint="@color/white"
+        android:padding="10dp"
+
+        />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/connexion_text"
+            android:fontFamily="@font/dm_medium"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:padding="10dp"
+            android:layout_marginBottom="150dp"
+            />
+</LinearLayout>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dettes"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:fontFamily="@font/dancing_bold"
+        android:textSize="50sp"
+        android:layout_marginBottom="30dp"
+        />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/contour"
+        android:drawableStart="@drawable/baseline_email_24"
+        android:fontFamily="@font/dm_medium"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:minHeight="45dp"
+       app:drawableTint="@color/net"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
+
+    <EditText
     android:id="@+id/motDePasse"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:hint="@string/mot_de_passe"
     android:inputType="textPassword"
+    android:minHeight="45dp"
+    android:textColor="@color/black"
+    android:textAlignment="center"
+    android:background="@drawable/contour"
+    android:fontFamily="@font/dm_medium"
     android:layout_marginTop="16dp"/>
 
 <Button
@@ -28,6 +81,8 @@ android:padding="24dp">
     android:layout_height="wrap_content"
     android:text="@string/connexion_button"
     android:layout_marginTop="24dp"/>
+
+
 
 </LinearLayout>
 

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ajouter un client"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:fontFamily="@font/dm_bold"
+            android:textColor="@color/app"/>
+
+        <EditText
+            android:id="@+id/editTextNom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nom"
+            android:layout_marginTop="12dp"
+            android:drawable="@drawable/contour"/>
+
+
+
+        <EditText
+            android:id="@+id/editTextTelephone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Téléphone"
+            android:layout_marginTop="8dp"
+            android:drawable="@drawable/contour"/>
+
+
+        <EditText
+            android:id="@+id/editTextAdresse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Adresse"
+            android:layout_marginTop="12dp"
+            android:drawable="@drawable/contour"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:paddingHorizontal="12dp">
+
+
+        <Button
+            android:id="@+id/buttonAjouter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ajouter"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/app"
+            android:textColor="@color/white"/>
+
+            <Button
+            android:id="@+id/buttonAnnuler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Annuler"
+            android:layout_marginTop="12dp"
+                android:background="@color/app"
+                android:textColor="@color/white"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
