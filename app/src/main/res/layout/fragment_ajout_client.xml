@@ -1,84 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="16dp"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="8dp">
+    android:fillViewport="true"
+    android:layout_gravity="center"
+    android:background="@drawable/bordure">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:background="@drawable/bordure">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ajouter un client"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:fontFamily="@font/dm_bold"
-            android:textColor="@color/app"/>
-
-        <EditText
-            android:id="@+id/editTextNom"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nom"
-            android:layout_marginTop="12dp"
-            android:drawable="@drawable/contour"/>
-
-
-
-        <EditText
-            android:id="@+id/editTextTelephone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Téléphone"
-            android:layout_marginTop="8dp"
-            android:drawable="@drawable/contour"/>
-
-
-        <EditText
-            android:id="@+id/editTextAdresse"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Adresse"
-            android:layout_marginTop="12dp"
-            android:drawable="@drawable/contour"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="12dp"
             android:gravity="center"
-            android:paddingHorizontal="12dp">
+            app:cardCornerRadius="12dp"
+            app:cardElevation="8dp"
+            android:background="@drawable/bordure">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-        <Button
-            android:id="@+id/buttonAjouter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ajouter"
-            android:layout_marginTop="12dp"
-            android:layout_marginRight="20dp"
-            android:background="@color/app"
-            android:textColor="@color/white"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ajouter_un_client"
+                    android:textSize="40sp"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/dancing_bold"
+                    android:textColor="@color/app"/>
 
-            <Button
-            android:id="@+id/buttonAnnuler"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Annuler"
-            android:layout_marginTop="12dp"
-                android:background="@color/app"
-                android:textColor="@color/white"/>
+                <EditText
+                    android:id="@+id/editTextNom"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:hint="@string/nom"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/contour"
+                    />
 
+                <EditText
+                    android:id="@+id/editTextTelephone"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:hint="@string/telephone"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/contour"/>
 
-        </LinearLayout>
+                <EditText
+                    android:id="@+id/editTextAdresse"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:hint="@string/adresse"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/contour"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/buttonAjouter"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/ajouter"
+                        android:layout_marginEnd="8dp"
+                        app:backgroundTint="@color/app"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/dm_bold"/>
+
+                    <Button
+                        android:id="@+id/buttonAnnuler"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/annuler"
+                        app:backgroundTint="@color/app"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/dm_bold"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
     </LinearLayout>
-
-</androidx.cardview.widget.CardView>
+</ScrollView>

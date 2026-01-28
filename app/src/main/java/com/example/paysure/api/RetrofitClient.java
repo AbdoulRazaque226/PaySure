@@ -7,8 +7,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
-    private static Retrofit retrofit;
-    
 
     public static Retrofit getClient(String token) {
 
@@ -20,19 +18,17 @@ public class RetrofitClient {
                         chain.request().newBuilder()
                                 .addHeader("apikey", SupabaseClient.API_KEY)
                                 .addHeader("Content-Type", "application/json")
-                                .addHeader("Authorization", "Bearer " + token)
+                              // .addHeader("Authorization", "Bearer " + token)
                                 .build()
                 ))
                 .addInterceptor(interceptor)
                 .build();
 
-        retrofit = new Retrofit.Builder()
+        return new Retrofit.Builder()
                 .baseUrl(SupabaseClient.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();
-
-        return retrofit;
     }
 }
 

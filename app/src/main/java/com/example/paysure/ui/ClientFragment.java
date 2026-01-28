@@ -57,7 +57,7 @@ public class ClientFragment extends Fragment {
                 .getString("access_token", "");
 
         ajoutClient.setOnClickListener(v -> {
-            com.example.paysure.ui.AjouterClientBottomSheet bottomSheet = new com.example.paysure.ui.AjouterClientBottomSheet();
+            com.example.paysure.AjouterClientBottomSheet bottomSheet = new com.example.paysure.AjouterClientBottomSheet();
             bottomSheet.show(getParentFragmentManager(), "AjouterClient");
         });
 

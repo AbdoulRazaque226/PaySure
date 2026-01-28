@@ -16,6 +16,13 @@ public class Client {
     @SerializedName("adresse")
     private String adresse;
 
+    public Client(String nom, String telephone, String adresse) {
+        this.nom = nom;
+        this.telephone = telephone;
+        this.adresse = adresse;
+    }
+
+
     public String getId() { return id; }
     public String getNom() { return nom; }
     public String getTelephone() { return telephone; }
