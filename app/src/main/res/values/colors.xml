@@ -7,4 +7,6 @@
     <color name="rose">#F9B34C</color>
     <color name="btn"> #9E9E9E</color>
     <color name="net">#695F5F</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#00FF00</color>
 </resources>

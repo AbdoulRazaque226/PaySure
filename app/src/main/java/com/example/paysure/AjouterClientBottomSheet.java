@@ -2,6 +2,7 @@ package com.example.paysure;
 
 import static com.example.paysure.api.SupabaseClient.BASE_URL;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -39,20 +40,28 @@ public class AjouterClientBottomSheet extends BottomSheetDialogFragment {
     private Button buttonAnnuler;
 
 
+    public interface OnClientAddedListener {
+        void onClientAdded();
+    }
 
+    private OnClientAddedListener mListener;
+    
+    @SuppressLint("CutPasteId")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_ajout_client, container, false);
-
+        
 
         Button btnAjouter = view.findViewById(R.id.buttonAjouter);
         EditText editTextNom = view.findViewById(R.id.editTextNom);
         EditText editTextTelephone = view.findViewById(R.id.editTextTelephone);
         EditText editTextAdresse = view.findViewById(R.id.editTextAdresse);
 
+        
+        
         btnAjouter.setOnClickListener(v -> {
 
             String nom = editTextNom.getText().toString().trim();
@@ -63,7 +72,7 @@ public class AjouterClientBottomSheet extends BottomSheetDialogFragment {
                 Toast.makeText(getContext(), "Champs obligatoires", Toast.LENGTH_SHORT).show();
                 return;
             }
-
+            btnAjouter.setEnabled(false);
             envoyer(nom, telephone, adresse);
         });
         return view;
@@ -88,19 +97,28 @@ public class AjouterClientBottomSheet extends BottomSheetDialogFragment {
 
         api.addClient("Bearer " + token, client).enqueue(new Callback<List<Client>>() {
             @Override
-            public void onResponse(Call<List<Client>> call, Response<List<Client>> response) {
+            public void onResponse(@NonNull Call<List<Client>> call, @NonNull Response<List<Client>> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(getContext(), "Client ajouté ✅", Toast.LENGTH_SHORT).show();
-                } else {
+
+                    if (mListener != null) {
+                        mListener.onClientAdded();
+                        dismiss();
+                    }
+                }else{
                     Toast.makeText(getContext(),
                             "Erreur Supabase : " + response.code(),
                             Toast.LENGTH_LONG).show();
                 }
-            }
 
+              
+            }
+            
+            
             @Override
-            public void onFailure(Call<List<Client>> call, Throwable t) {
+            public void onFailure(@NonNull Call<List<Client>> call, @NonNull Throwable t) {
                 Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_LONG).show();
+               
             }
         });
     }

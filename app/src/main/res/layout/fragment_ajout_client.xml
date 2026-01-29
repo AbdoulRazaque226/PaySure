@@ -78,7 +78,7 @@
                         android:layout_marginEnd="8dp"
                         app:backgroundTint="@color/app"
                         android:textColor="@color/white"
-                        android:fontFamily="@font/dm_bold"/>
+                        android:fontFamily="@font/dancing_bold"/>
 
                     <Button
                         android:id="@+id/buttonAnnuler"
@@ -88,7 +88,7 @@
                         android:text="@string/annuler"
                         app:backgroundTint="@color/app"
                         android:textColor="@color/white"
-                        android:fontFamily="@font/dm_bold"/>
+                        android:fontFamily="@font/dancing_bold"/>
                 </LinearLayout>
 
             </LinearLayout>

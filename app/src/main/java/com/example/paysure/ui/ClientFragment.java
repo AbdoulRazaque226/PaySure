@@ -37,6 +37,8 @@ public class ClientFragment extends Fragment {
     @SuppressLint("MissingInflatedId")
     @Nullable
     @Override
+
+    //ajout avec le formulaire
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -44,6 +46,7 @@ public class ClientFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_client, container, false);
 
         ImageView ajoutClient = view.findViewById(R.id.ajout_client);
+        
         recyclerView = view.findViewById(R.id.AfficherClient);
         if (recyclerView == null) {
             Log.e("DEBUG", "Le RecyclerView est null ! Vérifiez l'ID.");
@@ -63,7 +66,10 @@ public class ClientFragment extends Fragment {
 
         AfficherClients();
         return view;
+        
     }
+    
+//modification avec le formila
 
     private void AfficherClients() {
         Api api = RetrofitClient.getClient(token).create(Api.class);

@@ -6,12 +6,12 @@
     android:orientation="vertical"
     android:background="@color/app">
 
+    <!-- HEADER -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="#2C3E50"
-        android:padding="16dp"
-        android:layout_marginBottom="20dp">
+        android:padding="16dp">
 
         <TextView
             android:text="Liste des clients"
@@ -27,14 +27,14 @@
             android:layout_height="40dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/ic_add"
+            android:src="@drawable/ici_add_circle"
             app:tint="@android:color/white" />
     </RelativeLayout>
 
+    <!-- LISTE -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/AfficherClient"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@drawable/bordure"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"/>
 </LinearLayout>

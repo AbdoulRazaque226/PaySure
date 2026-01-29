@@ -6,8 +6,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.paysure.AjouterClientBottomSheet;
 import com.example.paysure.R;
 import com.example.paysure.model.Client;
 
@@ -52,4 +54,5 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ViewHolder
             textAdresse = itemView.findViewById(R.id.textAdresse);
         }
     }
+    
 }
