@@ -21,4 +21,6 @@ public class DetteFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_dette, container, false);
     }
+    
+    
 }
